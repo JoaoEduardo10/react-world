@@ -1,0 +1,38 @@
+.side-bar {
+    flex: 2;
+    background-color: $white;
+    min-height: 100vh;
+    padding: 5rem 2rem;
+
+    &_menu {
+        margin-top: 5rem;
+    }
+
+    &_link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: .3rem;
+        transition: all 300ms;
+        
+        &.active, &:hover {
+            background-color: $gray-100;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: .5rem;
+                height: 100%;
+                background-color: $pink;
+            }
+        }
+
+        &:not(:first-child) {
+            margin-top: 1.5rem;
+        }
+    }
+}
