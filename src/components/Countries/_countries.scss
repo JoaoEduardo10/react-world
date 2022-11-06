@@ -1,0 +1,9 @@
+.countries {
+    margin-top: 5rem;
+
+    &_list {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+}

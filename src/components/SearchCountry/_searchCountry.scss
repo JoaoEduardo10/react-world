@@ -1,0 +1,24 @@
+.search {
+    margin-bottom: 2rem;
+   
+
+    &_input {
+        display: flex;
+        align-items: center;
+
+        svg {
+            transform: translateX(-2rem);
+            color: $gray;
+        }
+    }
+
+    input {
+        width: 62%;
+        outline: none;
+        padding: .5rem  2rem;
+        border: .1rem solid $gray;
+        border-radius: .3rem;
+        font-family: inherit;
+        font-size: 1.6rem;
+    }
+}

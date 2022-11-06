@@ -1,0 +1,22 @@
+.pagenation {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+
+    &_prev, &_next {
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+        background-color: $white;
+        border-radius: 50%;
+        border: .1rem solid $gray;
+        outline: none;
+
+        &:disabled {
+            background-color: $gray-100;
+            color: $gray;
+            cursor: not-allowed;
+        }
+    }
+}
