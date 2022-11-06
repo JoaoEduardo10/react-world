@@ -1,0 +1,21 @@
+.topBar {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    background-color: $white;
+    padding: 1rem;
+    border-radius: .3rem;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-right: .5rem;
+
+    
+    &_link {
+        transition: color .4s ;
+
+        &:hover {
+            color: $pink;
+        }
+    }
+    
+}
