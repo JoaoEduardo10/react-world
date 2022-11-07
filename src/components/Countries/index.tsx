@@ -12,7 +12,7 @@ export const Countries =  () => {
 	const [firstItem, setFirstItem] = useState(0);
 	const [lastItem, setLastItem] = useState(6);
 
-	const { first, last } = useAppSelector(item => item.pagenation);
+	const { first, last, pais } = useAppSelector(item => item.pagenation);
 
 	useEffect(() => {
 		setCountrys(CountryList.getAllCountries());
@@ -30,13 +30,19 @@ export const Countries =  () => {
 			</div>
 			<div className="countries_list">
 				{
-					countrys?.sort().slice(firstItem, lastItem).map((country) => (
+					pais ? countrys?.filter((country) => country.name.toLowerCase().includes(pais.toLowerCase())).sort().map((country) => (
 						<Country key={country.name} country={country} />
-					))
+					)) : (
+						countrys?.sort().slice(firstItem, lastItem).map((country) => (
+							<Country key={country.name} country={country} />
+						))
+					)
 				}
 			</div>
 			<div className="countries_pagenations">
-				<Pagenation />
+				{
+					!pais && <Pagenation />
+				}
 			</div>
 		</div>
 	);

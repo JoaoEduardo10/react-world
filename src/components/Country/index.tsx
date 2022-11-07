@@ -6,13 +6,18 @@ import {
 } from '@mui/icons-material';
 
 import { ICountry } from 'country-state-city';
-import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
 	country: ICountry
 }
 
 export const Country = ({ country }: Props) => {
+	const navegate = useNavigate();
+
+	const handleNavegate = () => {
+		navegate(`/country/${country.isoCode}`);
+	};
 
 	return (
 
@@ -39,7 +44,7 @@ export const Country = ({ country }: Props) => {
 				</div>
 			</div>
 			<div className="country_btn">
-				<button>Ver mais <ArrowForward /></button>
+				<button onClick={handleNavegate}>Ver mais <ArrowForward /></button>
 			</div>
 		</div>
 	);
