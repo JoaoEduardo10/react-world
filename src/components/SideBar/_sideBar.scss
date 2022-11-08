@@ -4,6 +4,8 @@
     min-height: 100vh;
     padding: 5rem 2rem;
 
+    
+
     &_menu {
         margin-top: 5rem;
     }
@@ -34,5 +36,9 @@
         &:not(:first-child) {
             margin-top: 1.5rem;
         }
+    }
+
+    @media (max-width: 781px) {
+        display: none;
     }
 }

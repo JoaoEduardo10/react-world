@@ -18,7 +18,7 @@ export const SearchCountry = () => {
 			<div className="search_input">
 				<input 
 					type="text" 
-					placeholder='Escreva o nome de um país'
+					placeholder='País'
 					onChange={({ target }) => setvalue(target.value)}
 				/>
 				<Search />

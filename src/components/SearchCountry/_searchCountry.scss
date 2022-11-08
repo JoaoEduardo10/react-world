@@ -5,6 +5,15 @@
     &_input {
         display: flex;
         align-items: center;
+        @media (max-width: 781px) {
+            margin-left: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (max-width: 479px) {
+            width: 80%;
+        }
 
         svg {
             transform: translateX(-2rem);
@@ -20,5 +29,9 @@
         border-radius: .3rem;
         font-family: inherit;
         font-size: 1.6rem;
+
+        @media (max-width: 479px) {
+            width: 100%;
+        }
     }
 }

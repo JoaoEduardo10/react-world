@@ -2,6 +2,7 @@
 @import "./base/reset";
 @import "../pages/Home/home";
 @import "../components/Content/content";
+@import "../components/MobileSideBar/mobileSideBar";
 @import "../components/SideBar/sideBar";
 @import "../components/TopBar/topBar";
 @import "../components/Logo/logo";
@@ -10,4 +11,5 @@
 @import "../components/Pagnation/pagination";
 @import "../components/SearchCountry/searchCountry";
 @import "../pages/CountryPage/countryPage";
+
 
