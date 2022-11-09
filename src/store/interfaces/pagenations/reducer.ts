@@ -16,11 +16,14 @@ export const pagenationSlice = createSlice({
 		},
 		search(state, { payload }: PayloadAction<string>) {
 			state.pais = payload;
+		},
+		addPage(state, { payload }: PayloadAction<boolean>) {
+			state.page = payload;
 		}
 
 	}
 });
 
 
-export const { newPage, prevPage, search} = pagenationSlice.actions;
+export const { newPage, prevPage, search, addPage } = pagenationSlice.actions;
 export const pagenationReducer = pagenationSlice.reducer;

@@ -4,15 +4,17 @@ import { useEffect, useState } from 'react';
 import { Pagenation } from '../Pagnation';
 import { useAppSelector } from '../../store/hooks';
 import { SearchCountry } from '../SearchCountry';
-
-
+import { Conteiner } from '../ConteinerCountries';
 
 export const Countries =  () => {
 	const [countrys, setCountrys] = useState<ICountry[] | undefined>(undefined);
 	const [firstItem, setFirstItem] = useState(0);
 	const [lastItem, setLastItem] = useState(6);
 
-	const { first, last, pais } = useAppSelector(item => item.pagenation);
+	const { first, last, pais, page } = useAppSelector(item => item.pagenation);
+
+	const boolean = page ? '/country/' : '/countys/states/';
+	const placeholder = page ? 'Pais' : 'Estados por pais';
 
 	useEffect(() => {
 		setCountrys(CountryList.getAllCountries());
@@ -24,26 +26,26 @@ export const Countries =  () => {
 	}, [first, last]);
 
 	return (
-		<div className="countries" >
+		<Conteiner >
 			<div className="countries_search" >
-				<SearchCountry />
+				<SearchCountry placeholder={placeholder} />
 			</div>
-			<div className="countries_list">
+			<ul className="countries_list">
 				{
 					pais ? countrys?.filter((country) => country.name.toLowerCase().includes(pais.toLowerCase())).sort().map((country) => (
-						<Country key={country.name} country={country} />
+						<Country navegacao={boolean} template={page} key={country.name} country={country} />
 					)) : (
 						countrys?.sort().slice(firstItem, lastItem).map((country) => (
-							<Country key={country.name} country={country} />
+							<Country navegacao={boolean} template={page} key={country.name} country={country} />
 						))
 					)
 				}
-			</div>
+			</ul>
 			<div className="countries_pagenations">
 				{
 					!pais && <Pagenation />
 				}
 			</div>
-		</div>
+		</Conteiner>
 	);
 };

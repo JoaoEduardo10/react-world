@@ -4,8 +4,11 @@ import { Search } from '@mui/icons-material';
 import { search } from '../../store/interfaces/pagenations/reducer';
 import { useAppDispatch } from '../../store/hooks';
 
+type Props = {
+	placeholder: string
+}
 
-export const SearchCountry = () => {
+export const SearchCountry = ({ placeholder }: Props) => {
 	const [value, setvalue] = useState('');
 	const dispatch = useAppDispatch();
 
@@ -18,7 +21,7 @@ export const SearchCountry = () => {
 			<div className="search_input">
 				<input 
 					type="text" 
-					placeholder='País'
+					placeholder={placeholder}
 					onChange={({ target }) => setvalue(target.value)}
 				/>
 				<Search />

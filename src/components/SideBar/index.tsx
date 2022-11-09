@@ -13,7 +13,7 @@ export const SideBar = () => {
 				<NavLink to={'/'} className="side-bar_link">
 					<LanguageOutlined /> Países
 				</NavLink>
-				<NavLink to={'/states'} className="side-bar_link">
+				<NavLink to={'/countys'} className="side-bar_link">
 					<TravelExploreOutlined /> Estados
 				</NavLink>
 			</div>

@@ -1,7 +1,7 @@
-import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { newPage, prevPage } from '../../store/interfaces/pagenations/reducer';
+import { Buttons } from '../Buttons';
 
 export const Pagenation = () => {
 	const dispatch = useAppDispatch();
@@ -33,13 +33,11 @@ export const Pagenation = () => {
 	};
 
 	return (
-		<div className="pagenation">
-			<button className="pagenation_prev" onClick={handleClickPrev} disabled={abilitPrev}>
-				<ChevronLeft />
-			</button>
-			<button className="pagenation_next" onClick={handleClickNext} disabled={abilitNext}>
-				<ChevronRight />
-			</button>
-		</div>
+		<Buttons 
+			disabledNext={abilitNext}
+			disabledPrev={abilitPrev}
+			handleClickNext={handleClickNext}
+			handleClickPrev={handleClickPrev}
+		/>
 	);
 };

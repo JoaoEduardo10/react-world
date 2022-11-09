@@ -5,6 +5,25 @@
     padding: 1rem;
     box-shadow: 0 .3rem .5rem rgba($black, .1);
 
+    &_name-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+
+        .country_fleg {
+            width: 50%;
+            height: 50%;
+
+
+            img {
+                min-width: 100%;
+                min-height: 100%;
+            }
+        }
+    }
+
     &_name {
         display: flex;
         align-items: center;

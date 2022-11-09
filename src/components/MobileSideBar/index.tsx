@@ -28,7 +28,7 @@ export const MobileSideBar = () => {
 						<LanguageOutlined /> Países
 					</NavLink>
 					<NavLink 
-						to={'/states'} 
+						to={'/countys'} 
 						className="mobile-side-bar_link" 
 						onClick={() => dispatch(reverseShow())}
 					>

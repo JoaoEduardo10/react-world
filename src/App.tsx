@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CountryPage } from './pages/CountryPage';
+import { CoteinerEstados } from './pages/ConteinerEstados';
 import { Home } from './pages/Home';
+import { Estados } from './pages/Estados';
 
 function App() {
 
@@ -8,8 +10,10 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route path='/' element={<Home />} />
-				<Route path='/states' element={<h1>pagina dos estados</h1>} />
 				<Route path='/country/:isoCode' element={<CountryPage />} />
+				<Route path='/countys' element={<CoteinerEstados />} />
+				<Route path='/countys/states/:isocode' element={<Estados />} />
+				<Route path='/countys/states/state:isocode' element={<h1>Estado</h1>} />
 				<Route path='*' element={<Home />} />
 			</Routes>
 		</BrowserRouter>
