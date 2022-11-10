@@ -52,10 +52,10 @@ export const States = () => {
 			<ul className='countries_list'>
 				{
 					pais ? states.filter(states => states.name.toLowerCase().includes(pais.toLowerCase())).sort().map(state => (
-						<State city={state.isoCode} key={state.name} isoCodeP={isoCode} state={state} />
+						<State key={state.name} isoCodeP={isoCode} state={state} />
 					)): (
 						states.sort().slice(firstState, lastState).map((state) => (
-							<State city={state.isoCode} key={state.name} isoCodeP={isoCode} state={state} />
+							<State key={state.name} isoCodeP={isoCode} state={state} />
 						))
 					)
 				}
