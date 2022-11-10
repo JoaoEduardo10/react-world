@@ -1,10 +1,10 @@
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 
 type Props = {
-    handleClickPrev: () => void,
-    handleClickNext: () => void,
-    disabledPrev: boolean,
-    disabledNext: boolean,
+    handleClickPrev?: () => void,
+    handleClickNext?: () => void,
+    disabledPrev?: boolean,
+    disabledNext?: boolean,
 }
 
 export const Buttons = ({ disabledNext, disabledPrev,handleClickNext, handleClickPrev }: Props) => {

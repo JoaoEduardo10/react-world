@@ -19,11 +19,19 @@ export const pagenationSlice = createSlice({
 		},
 		addPage(state, { payload }: PayloadAction<boolean>) {
 			state.page = payload;
-		}
+		},
+		nextStatePage(state, { payload }: PayloadAction<number>) {
+			state.firstState += payload;
+			state.lastState +=  payload;
+		},
+		prevStatepage(state, { payload }: PayloadAction<number>) {
+			state.firstState -= payload;
+			state.lastState -=  payload;
+		},
 
 	}
 });
 
 
-export const { newPage, prevPage, search, addPage } = pagenationSlice.actions;
+export const { newPage, prevPage, search, addPage, nextStatePage, prevStatepage} = pagenationSlice.actions;
 export const pagenationReducer = pagenationSlice.reducer;

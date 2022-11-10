@@ -40,6 +40,14 @@
         height: 50rem;
         overflow-y: auto;
         
+        
+        @media (max-width: 717px) {
+           height: 100%;
+           overflow-y: none;
+           flex-direction: column;
+
+        }
+        
     }
 
     &_header {
