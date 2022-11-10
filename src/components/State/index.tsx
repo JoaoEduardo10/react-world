@@ -4,12 +4,12 @@ import { IState, City } from 'country-state-city';
 
 type Props = {
 	state: IState
-	isoCodeP: string
+	isoCodeP?: string
 	city: string
 }
 
 export const State = ({ state, isoCodeP, city }: Props) => {
-	const NumCitys = City.getCitiesOfState(isoCodeP, city);
+	const NumCitys = City.getCitiesOfState(state.countryCode, city);
 	
 	return (
 		<ConteinerCards>
